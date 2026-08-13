@@ -12,7 +12,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+    return  Game::all(); // Find the game by its ID
     }
 
     /**
@@ -28,7 +28,18 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $validated = $request->validate([
+        'title' => 'required|string',
+        'status' => 'required|string',
+        'release_date' => 'nullable|date',
+        'hours_played' => 'nullable|numeric|min:0',
+        'achievements' => 'nullable|numeric|min:0', 
+        
+       ]);
+
+        $game = Game::create($validated);
+
+        return response()->json($game, 201);
     }
 
     /**
