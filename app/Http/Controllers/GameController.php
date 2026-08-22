@@ -47,7 +47,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        return response()->json($game);
     }
 
     /**
@@ -62,8 +62,18 @@ class GameController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Game $game)
-    {
-        //
+    {    $validated = $request->validate([ 
+        'title' => 'required|string',
+        'status' => 'required|string',
+        'release_date' => 'nullable|date',
+        'hours_played' => 'nullable|numeric|min:0',
+        'achievements' => 'nullable|numeric|min:0',
+        ]);
+        $game->update($validated);
+        return response()->json($game); 
+           
+        
+        
     }
 
     /**
@@ -71,6 +81,7 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
-        //
+       $game->delete();
+       return response()->json(null, 204); 
     }
 }
