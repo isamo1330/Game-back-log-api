@@ -19,11 +19,11 @@ Front end lives at: https://github.com/isamo1330/Game-Back-log-website-project
 ## Endpoints
 | Method | URI | Action |
 |---|---|---|
-| GET | /api/games | List every game |
-| POST | /api/games | Create a game |
-| GET | /api/games/{id} | Show one game |
-| PUT | /api/games/{id} | Update a game |
-| DELETE | /api/games/{id} | Delete a game |
+| GET | /api/games | List every game. |
+| POST | /api/games | Create a game. |
+| GET | /api/games/{id} | Show one game. |
+| PUT | /api/games/{id} | Update a game. |
+| DELETE | /api/games/{id} | Delete a game. |
 
 ## Testing
 The API was tested using a Postman collection called Game Backlog API. It contains four requests covering the four CRUD operations, and each request has an automated test that checks the response status code matches the expected one (200 for GET and PUT, 201 for POST, 204 for DELETE). Deliberate failures 404, 405 
