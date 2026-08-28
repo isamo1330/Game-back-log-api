@@ -14,7 +14,7 @@ Front end lives at: https://github.com/isamo1330/Game-Back-log-website-project
 4. `php artisan key:generate`
 5. Create the database file: `New-Item database\database.sqlite` (PowerShell) or `touch database/database.sqlite` (Git Bash)
 6. `php artisan migrate`
-7. `php artisan serve` — API runs at http://127.0.0.1:8000
+7. `php artisan serve` API runs at http://127.0.0.1:8000
 
 ## Endpoints
 | Method | URI | Action |
